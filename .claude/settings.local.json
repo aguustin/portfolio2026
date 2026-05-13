@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs sed -i 's/\\\\[0\\\\.22, 1, 0\\\\.36, 1\\\\]/\"easeOut\"/g')"
+    ]
+  }
+}
