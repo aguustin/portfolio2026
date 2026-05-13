@@ -2,13 +2,27 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { GithubIcon } from "@/components/ui/Icons";
-import { projects, type Project } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { fadeUp, stagger } from "@/lib/animations";
+import type { Dictionary } from "@/lib/dictionaries";
 
-function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+type ProjectDict = Dictionary["projects"]["items"][number];
+
+function ProjectCard({
+  project,
+  projectDict,
+  viewGithub,
+  featured = false,
+}: {
+  project: typeof projects[number];
+  projectDict: ProjectDict;
+  viewGithub: string;
+  featured?: boolean;
+}) {
   return (
     <motion.article
       variants={fadeUp}
@@ -18,33 +32,45 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
       <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${project.gradient.replace("from-", "from-").replace("/10", "/40").replace("/5", "/20")}`} />
 
       <div className={`p-6 lg:p-8 ${featured ? "lg:flex lg:gap-12 lg:items-start" : ""}`}>
-        {/* Mock visual */}
+        {/* Visual */}
         <div
           className={`relative rounded-xl overflow-hidden mb-6 ${featured ? "lg:mb-0 lg:w-1/2 lg:flex-shrink-0" : ""}`}
         >
-          <div
-            className={`w-full h-48 ${featured ? "lg:h-64" : "h-44"} bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}
-          >
-            <div className="absolute inset-0 bg-[#09090b]/40" />
-            {/* Fake UI chrome */}
-            <div className="relative z-10 w-full px-6">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <div className="flex-1 h-5 rounded-md bg-white/[0.06] ml-2" />
-              </div>
-              <div className="space-y-2">
-                <div className="h-2.5 rounded bg-white/[0.08] w-3/4" />
-                <div className="h-2.5 rounded bg-white/[0.05] w-1/2" />
-                <div className="grid grid-cols-3 gap-2 mt-4">
-                  <div className="h-12 rounded-lg bg-white/[0.06]" />
-                  <div className="h-12 rounded-lg bg-white/[0.04]" />
-                  <div className="h-12 rounded-lg bg-white/[0.06]" />
+          {project.image ? (
+            <div className={`w-full ${featured ? "h-48 lg:h-64" : "h-44"} relative`}>
+              <Image
+                src={project.image}
+                alt={projectDict.title}
+                fill
+                className="object-cover object-top"
+                sizes={featured ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
+              />
+              <div className="absolute inset-0 bg-[#09090b]/20" />
+            </div>
+          ) : (
+            <div
+              className={`w-full h-48 ${featured ? "lg:h-64" : "h-44"} bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}
+            >
+              <div className="absolute inset-0 bg-[#09090b]/40" />
+              <div className="relative z-10 w-full px-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  <div className="flex-1 h-5 rounded-md bg-white/[0.06] ml-2" />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-2.5 rounded bg-white/[0.08] w-3/4" />
+                  <div className="h-2.5 rounded bg-white/[0.05] w-1/2" />
+                  <div className="grid grid-cols-3 gap-2 mt-4">
+                    <div className="h-12 rounded-lg bg-white/[0.06]" />
+                    <div className="h-12 rounded-lg bg-white/[0.04]" />
+                    <div className="h-12 rounded-lg bg-white/[0.06]" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Content */}
@@ -52,10 +78,10 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
           <div className="flex items-start justify-between gap-4 mb-3">
             <div>
               <span className={`text-xs font-mono font-medium ${project.accentColor} mb-1.5 block`}>
-                {project.tag}
+                {projectDict.tag}
               </span>
               <h3 className="text-lg font-semibold text-[#fafafa] leading-tight group-hover:text-white transition-colors">
-                {project.title}
+                {projectDict.title}
               </h3>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0 mt-1">
@@ -81,12 +107,12 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
           </div>
 
           <p className="text-sm text-[#71717a] leading-relaxed mb-5">
-            {project.description}
+            {projectDict.description}
           </p>
 
           {/* Features */}
           <ul className="space-y-1.5 mb-5">
-            {project.features.slice(0, featured ? 5 : 3).map((feature) => (
+            {projectDict.features.slice(0, featured ? 5 : 3).map((feature) => (
               <li
                 key={feature}
                 className="flex items-start gap-2 text-sm text-[#52525b]"
@@ -112,7 +138,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
               href={project.githubUrl || "#"}
               className={`inline-flex items-center gap-1.5 text-sm font-medium ${project.accentColor} hover:opacity-80 transition-opacity`}
             >
-              View on GitHub
+              {viewGithub}
               <ArrowUpRight size={14} />
             </a>
           </div>
@@ -122,8 +148,10 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
   );
 }
 
-export function ProjectsSection() {
-  const [featured, ...rest] = projects;
+export function ProjectsSection({ dict }: { dict: Dictionary }) {
+  const t = dict.projects;
+  const [featuredProject, ...restProjects] = projects;
+  const [featuredDict, ...restDicts] = t.items;
 
   return (
     <section id="projects" className="py-24 lg:py-32 px-6">
@@ -136,17 +164,16 @@ export function ProjectsSection() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="mb-4">
-            <SectionLabel>Projects</SectionLabel>
+            <SectionLabel>{t.label}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#fafafa] mb-4"
           >
-            Products I&apos;ve built
+            {t.heading}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[#71717a] text-lg max-w-xl">
-            End-to-end systems built with production-quality standards — from
-            architecture to deployment.
+            {t.subtitle}
           </motion.p>
         </motion.div>
 
@@ -157,9 +184,19 @@ export function ProjectsSection() {
           variants={stagger}
           className="grid grid-cols-1 lg:grid-cols-2 gap-4"
         >
-          <ProjectCard project={featured} featured />
-          {rest.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          <ProjectCard
+            project={featuredProject}
+            projectDict={featuredDict}
+            viewGithub={t.view_github}
+            featured
+          />
+          {restProjects.map((project, i) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              projectDict={restDicts[i]}
+              viewGithub={t.view_github}
+            />
           ))}
         </motion.div>
       </div>

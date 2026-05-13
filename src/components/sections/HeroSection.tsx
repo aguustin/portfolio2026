@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
+import type { Dictionary } from "@/lib/dictionaries";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -29,7 +30,9 @@ function FadeUp({
 
 const techStack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "MongoDB", "Django"];
 
-export function HeroSection() {
+export function HeroSection({ dict }: { dict: Dictionary }) {
+  const t = dict.hero;
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
       {/* Background gradients */}
@@ -52,7 +55,7 @@ export function HeroSection() {
         <FadeUp delay={0} className="mb-8">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/[0.04] border border-white/[0.08] text-[#a1a1aa]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Available for new opportunities
+            {t.available}
             <Sparkles size={11} className="text-indigo-400" />
           </span>
         </FadeUp>
@@ -60,18 +63,16 @@ export function HeroSection() {
         {/* Main headline */}
         <FadeUp delay={0.1}>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] mb-6">
-            <span className="text-[#fafafa]">Full Stack</span>
+            <span className="text-[#fafafa]">{t.title1}</span>
             <br />
-            <span className="gradient-text-accent">Product Engineer</span>
+            <span className="gradient-text-accent">{t.title2}</span>
           </h1>
         </FadeUp>
 
         {/* Subtitle */}
         <FadeUp delay={0.2} className="mb-10">
           <p className="max-w-2xl text-lg sm:text-xl text-[#71717a] leading-relaxed">
-            I build complete SaaS products and AI-powered systems end-to-end —
-            from scalable backends and clean APIs to modern, high-quality
-            frontend interfaces.
+            {t.subtitle}
           </p>
         </FadeUp>
 
@@ -96,7 +97,7 @@ export function HeroSection() {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#09090b] text-sm font-medium rounded-xl hover:bg-white/90 transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
             >
-              View Projects
+              {t.cta_projects}
               <ArrowDown size={15} />
             </a>
             <a
@@ -105,7 +106,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.06] text-[#fafafa] text-sm font-medium rounded-xl border border-white/[0.08] hover:bg-white/[0.1] hover:border-white/[0.14] transition-all duration-200"
             >
               <Download size={15} />
-              Download CV
+              {t.cta_cv}
             </a>
           </div>
         </FadeUp>

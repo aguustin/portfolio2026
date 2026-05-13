@@ -6,32 +6,22 @@ import { Mail, Send, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { fadeUp, stagger } from "@/lib/animations";
+import type { Dictionary } from "@/lib/dictionaries";
 
-const contactLinks = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "agustin.molee@gmail.com",
-    href: "mailto:agustin.molee@gmail.com",
-    description: "Best for work inquiries",
-  },
-  {
-    icon: GithubIcon,
-    label: "GitHub",
-    value: "github.com/aguustin",
-    href: "https://github.com",
-    description: "See my open source work",
-  },
-  {
-    icon: LinkedinIcon,
-    label: "LinkedIn",
-    value: "linkedin.com/in/agustin-mole",
-    href: "https://linkedin.com",
-    description: "Connect professionally",
-  },
+const contactIcons = [Mail, GithubIcon, LinkedinIcon];
+const contactHrefs = [
+  "mailto:agustin.molee@gmail.com",
+  "https://github.com/aguustin",
+  "https://linkedin.com/in/agustin-mole",
+];
+const contactValues = [
+  "agustin.molee@gmail.com",
+  "github.com/aguustin",
+  "linkedin.com/in/agustin-mole",
 ];
 
-export function ContactSection() {
+export function ContactSection({ dict }: { dict: Dictionary }) {
+  const t = dict.contact;
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
@@ -55,18 +45,16 @@ export function ContactSection() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="mb-4">
-            <SectionLabel>Contact</SectionLabel>
+            <SectionLabel>{t.label}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#fafafa] mb-4"
           >
-            Let&apos;s work together
+            {t.heading}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[#71717a] text-lg max-w-xl">
-            Open to new opportunities, freelance projects, and interesting
-            collaborations. Send me a message and I&apos;ll get back to you
-            quickly.
+            {t.subtitle}
           </motion.p>
         </motion.div>
 
@@ -79,31 +67,34 @@ export function ContactSection() {
             variants={stagger}
             className="space-y-4"
           >
-            {contactLinks.map(({ icon: Icon, label, value, href, description }) => (
-              <motion.a
-                key={label}
-                variants={fadeUp}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:bg-white/[0.06] transition-colors">
-                  <Icon size={16} className="text-[#a1a1aa]" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#52525b] mb-0.5">{label}</p>
-                  <p className="text-sm text-[#e4e4e7] font-medium truncate">
-                    {value}
-                  </p>
-                  <p className="text-xs text-[#3f3f46] mt-0.5">{description}</p>
-                </div>
-                <ArrowUpRight
-                  size={14}
-                  className="text-[#3f3f46] group-hover:text-[#71717a] transition-colors flex-shrink-0"
-                />
-              </motion.a>
-            ))}
+            {t.links.map(({ label, description }, i) => {
+              const Icon = contactIcons[i];
+              const href = contactHrefs[i];
+              const value = contactValues[i];
+              return (
+                <motion.a
+                  key={label}
+                  variants={fadeUp}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:bg-white/[0.06] transition-colors">
+                    <Icon size={16} className="text-[#a1a1aa]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-[#52525b] mb-0.5">{label}</p>
+                    <p className="text-sm text-[#e4e4e7] font-medium truncate">{value}</p>
+                    <p className="text-xs text-[#3f3f46] mt-0.5">{description}</p>
+                  </div>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-[#3f3f46] group-hover:text-[#71717a] transition-colors flex-shrink-0"
+                  />
+                </motion.a>
+              );
+            })}
 
             <motion.div
               variants={fadeUp}
@@ -111,11 +102,9 @@ export function ContactSection() {
             >
               <p className="text-sm text-[#a1a1aa] leading-relaxed">
                 <span className="text-indigo-400 font-medium">
-                  Available for hire.
+                  {t.available_text}
                 </span>{" "}
-                I&apos;m currently open to full-time positions, freelance
-                contracts, and interesting side projects. Response time:
-                usually within 24 hours.
+                {t.available_detail}
               </p>
             </motion.div>
           </motion.div>
@@ -134,7 +123,7 @@ export function ContactSection() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs text-[#71717a] mb-2 font-medium">
-                    Name
+                    {t.form.name}
                   </label>
                   <input
                     type="text"
@@ -143,13 +132,13 @@ export function ContactSection() {
                     onChange={(e) =>
                       setForm((f) => ({ ...f, name: e.target.value }))
                     }
-                    placeholder="Your name"
+                    placeholder={t.form.name_placeholder}
                     className="w-full px-3.5 py-2.5 bg-white/[0.03] border border-white/[0.08] rounded-xl text-sm text-[#fafafa] placeholder-[#3f3f46] focus:outline-none focus:border-white/[0.18] focus:bg-white/[0.05] transition-all"
                   />
                 </div>
                 <div>
                   <label className="block text-xs text-[#71717a] mb-2 font-medium">
-                    Email
+                    {t.form.email}
                   </label>
                   <input
                     type="email"
@@ -158,7 +147,7 @@ export function ContactSection() {
                     onChange={(e) =>
                       setForm((f) => ({ ...f, email: e.target.value }))
                     }
-                    placeholder="your@email.com"
+                    placeholder={t.form.email_placeholder}
                     className="w-full px-3.5 py-2.5 bg-white/[0.03] border border-white/[0.08] rounded-xl text-sm text-[#fafafa] placeholder-[#3f3f46] focus:outline-none focus:border-white/[0.18] focus:bg-white/[0.05] transition-all"
                   />
                 </div>
@@ -166,7 +155,7 @@ export function ContactSection() {
 
               <div>
                 <label className="block text-xs text-[#71717a] mb-2 font-medium">
-                  Message
+                  {t.form.message}
                 </label>
                 <textarea
                   required
@@ -175,7 +164,7 @@ export function ContactSection() {
                   onChange={(e) =>
                     setForm((f) => ({ ...f, message: e.target.value }))
                   }
-                  placeholder="Tell me about your project or opportunity..."
+                  placeholder={t.form.message_placeholder}
                   className="w-full px-3.5 py-2.5 bg-white/[0.03] border border-white/[0.08] rounded-xl text-sm text-[#fafafa] placeholder-[#3f3f46] focus:outline-none focus:border-white/[0.18] focus:bg-white/[0.05] transition-all resize-none"
                 />
               </div>
@@ -187,25 +176,23 @@ export function ContactSection() {
               >
                 {status === "idle" && (
                   <>
-                    Send message
+                    {t.form.send}
                     <Send size={14} />
                   </>
                 )}
                 {status === "sending" && (
                   <span className="flex items-center gap-2">
                     <span className="w-3.5 h-3.5 border-2 border-[#09090b]/30 border-t-[#09090b] rounded-full animate-spin" />
-                    Sending...
+                    {t.form.sending}
                   </span>
                 )}
                 {status === "sent" && (
-                  <span className="text-emerald-700">
-                    Message sent ✓
-                  </span>
+                  <span className="text-emerald-700">{t.form.sent}</span>
                 )}
               </button>
 
               <p className="text-xs text-[#3f3f46] text-center">
-                I typically respond within 24 hours.
+                {t.form.response_time}
               </p>
             </form>
           </motion.div>

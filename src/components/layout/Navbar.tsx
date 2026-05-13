@@ -5,16 +5,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/lib/dictionaries";
 
-const navLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
-
-export function Navbar() {
+export function Navbar({ dict }: { dict: Dictionary }) {
+  const t = dict.nav;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -22,6 +16,14 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (y) => {
     setScrolled(y > 20);
   });
+
+  const navLinks = [
+    { label: t.projects, href: "#projects" },
+    { label: t.about, href: "#about" },
+    { label: t.skills, href: "#skills" },
+    { label: t.education, href: "#education" },
+    { label: t.contact, href: "#contact" },
+  ];
 
   return (
     <>
@@ -58,7 +60,7 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/aguustin"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-[#71717a] hover:text-[#fafafa] rounded-lg hover:bg-white/[0.05] transition-all duration-200"
@@ -66,7 +68,7 @@ export function Navbar() {
               <GithubIcon size={17} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/agustin-mole"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-[#71717a] hover:text-[#fafafa] rounded-lg hover:bg-white/[0.05] transition-all duration-200"
@@ -77,7 +79,7 @@ export function Navbar() {
               href="#contact"
               className="ml-1 px-4 py-1.5 text-sm font-medium bg-white text-[#09090b] rounded-xl hover:bg-white/90 transition-all duration-200"
             >
-              Contact
+              {t.contact}
             </a>
           </div>
 
@@ -111,7 +113,7 @@ export function Navbar() {
             ))}
             <div className="flex items-center gap-3 pt-3 mt-2 border-t border-white/[0.06]">
               <a
-                href="https://github.com"
+                href="https://github.com/aguustin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"
@@ -120,7 +122,7 @@ export function Navbar() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/agustin-mole"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"

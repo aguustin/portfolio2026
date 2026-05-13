@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": "Agustín Molé — Full Stack Product Engineer",
+    "description": "Full Stack Product Engineer specializing in SaaS, AI-powered systems, and modern web applications. Building end-to-end products with React, Next.js, Node.js, and more."
+  },
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for new opportunities",
+    "title1": "Full Stack",
+    "title2": "Product Engineer",
+    "subtitle": "I build complete SaaS products and AI-powered systems end-to-end — from scalable backends and clean APIs to modern, high-quality frontend interfaces.",
+    "cta_projects": "View Projects",
+    "cta_cv": "Download CV"
+  },
+  "about": {
+    "label": "About",
+    "heading1": "Building products,",
+    "heading2": "not just code",
+    "bio1": "I'm Agustín, a Full Stack Product Engineer from Argentina. I specialize in building complete web applications and SaaS products — from the database design to the user interface — with a focus on clean architecture, real-world scalability, and great user experience.",
+    "bio2": "I work across the entire product stack: REST APIs with Node.js and Django, modern frontends with React and Next.js, mobile apps with React Native, and increasingly, AI-powered features using LLMs and automation agents.",
+    "bio3": "I'm currently pursuing a degree in Programming at UTN while simultaneously building real-world products and expanding my skills in AI tooling and modern DevOps practices.",
+    "specialties": [
+      {
+        "title": "SaaS Builder",
+        "description": "Design and build complete SaaS products from architecture to deployment, covering backend, frontend, auth, and payments."
+      },
+      {
+        "title": "Full Stack Engineering",
+        "description": "End-to-end development across the entire stack: REST APIs, databases, state management, and modern UI."
+      },
+      {
+        "title": "AI-Assisted Development",
+        "description": "Integrate LLMs and AI agents into real products. Build automation workflows and intelligent features with modern AI tools."
+      },
+      {
+        "title": "Product Mindset",
+        "description": "Ship features that matter. I think from the user's perspective and build systems that solve real problems at scale."
+      }
+    ]
+  },
+  "projects": {
+    "label": "Projects",
+    "heading": "Products I've built",
+    "subtitle": "End-to-end systems built with production-quality standards — from architecture to deployment.",
+    "view_github": "View on GitHub",
+    "items": [
+      {
+        "id": "saas-events",
+        "title": "GoTicket — Event Management SaaS",
+        "tag": "SaaS · Payments · MERN",
+        "description": "Complete SaaS platform for event management and ticket sales with admin panel, roles, and payment processing.",
+        "features": [
+          "Ticket sales with payment gateway",
+          "Worker and role management",
+          "Full admin panel",
+          "Analytics dashboard",
+          "JWT authentication"
+        ]
+      },
+      {
+        "id": "task-manager",
+        "title": "TaskFlow — Collaborative Task Manager",
+        "tag": "Django · Next.js · Full Stack",
+        "description": "Collaborative platform for project and task management with statuses, comments, and multiple collaborators.",
+        "features": [
+          "Project and task management",
+          "Configurable statuses and priorities",
+          "Comment system",
+          "Collaborators and permissions",
+          "Productivity dashboard"
+        ]
+      },
+      {
+        "id": "security-platform",
+        "title": "SecureGate — Private Security Platform",
+        "tag": "Mobile · AI · Security",
+        "description": "Security system for gated communities with facial biometric authentication, mobile app, and real-time management.",
+        "features": [
+          "Real-time facial recognition",
+          "iOS and Android mobile app",
+          "Biometric access control",
+          "Resident and visitor management",
+          "Worker Threads for parallel processing"
+        ]
+      },
+      {
+        "id": "ai-leads",
+        "title": "JobSearchAgent — AI Job Application System",
+        "tag": "AI · Automation · Python",
+        "description": "AI agent for job search and management, capable of assisting in applications through automatic response generation, interview preparation, vacancy analysis, and adaptive Q&A creation for each opportunity.",
+        "features": [
+          "Prospecting automation",
+          "Intelligent AI classification",
+          "Data processing at scale",
+          "Automated outreach",
+          "Metrics dashboard"
+        ]
+      },
+      {
+        "id": "saas-stores",
+        "title": "StoreOS — Store Management SaaS",
+        "tag": "SaaS · Commerce · MERN",
+        "description": "Business management system for stores with dashboard, inventory, point of sale, and complete administrative tools.",
+        "features": [
+          "Metrics and sales dashboard",
+          "Product and inventory management",
+          "Point of sale (POS) system",
+          "Reports and analytics",
+          "Multi-user with roles"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "label": "Skills",
+    "heading": "Tech stack & expertise",
+    "subtitle": "A modern, production-oriented skillset built across full stack development, mobile, and AI tooling.",
+    "also_working": "Also working with",
+    "levels": ["", "Novice", "Basic", "Proficient", "Advanced", "Expert"]
+  },
+  "education": {
+    "label": "Education",
+    "heading": "Formation & credentials",
+    "subtitle": "Continuous learning combining formal education with hands-on certifications and self-directed study.",
+    "types": {
+      "degree": "degree",
+      "certificate": "certificate",
+      "course": "course"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Let's work together",
+    "subtitle": "Open to new opportunities, freelance projects, and interesting collaborations. Send me a message and I'll get back to you quickly.",
+    "available_text": "Available for hire.",
+    "available_detail": "I'm currently open to full-time positions, freelance contracts, and interesting side projects. Response time: usually within 24 hours.",
+    "links": [
+      { "label": "Email", "description": "Best for work inquiries" },
+      { "label": "GitHub", "description": "See my open source work" },
+      { "label": "LinkedIn", "description": "Connect professionally" }
+    ],
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "message": "Message",
+      "message_placeholder": "Tell me about your project or opportunity...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "sent": "Message sent ✓",
+      "response_time": "I typically respond within 24 hours."
+    }
+  },
+  "footer": {
+    "role": "Full Stack Product Engineer"
+  }
+}

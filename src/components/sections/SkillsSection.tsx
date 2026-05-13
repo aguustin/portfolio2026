@@ -12,6 +12,7 @@ import {
 import { skillCategories } from "@/data/skills";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { fadeUp, stagger } from "@/lib/animations";
+import type { Dictionary } from "@/lib/dictionaries";
 
 const iconMap: Record<string, React.ElementType> = {
   Monitor,
@@ -21,7 +22,6 @@ const iconMap: Record<string, React.ElementType> = {
   Sparkles,
   Smartphone,
 };
-
 
 function SkillBar({ level }: { level: number }) {
   return (
@@ -43,7 +43,9 @@ function SkillBar({ level }: { level: number }) {
   );
 }
 
-export function SkillsSection() {
+export function SkillsSection({ dict }: { dict: Dictionary }) {
+  const t = dict.skills;
+
   return (
     <section id="skills" className="py-24 lg:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -55,17 +57,16 @@ export function SkillsSection() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="mb-4">
-            <SectionLabel>Skills</SectionLabel>
+            <SectionLabel>{t.label}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#fafafa] mb-4"
           >
-            Tech stack & expertise
+            {t.heading}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[#71717a] text-lg max-w-xl">
-            A modern, production-oriented skillset built across full stack
-            development, mobile, and AI tooling.
+            {t.subtitle}
           </motion.p>
         </motion.div>
 
@@ -84,7 +85,6 @@ export function SkillsSection() {
                 variants={fadeUp}
                 className="p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.03] hover:border-white/[0.08] transition-all duration-300 group"
               >
-                {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div
                     className={`w-8 h-8 rounded-xl ${cat.bgColor} flex items-center justify-center`}
@@ -96,7 +96,6 @@ export function SkillsSection() {
                   </h3>
                 </div>
 
-                {/* Skills list */}
                 <div className="space-y-3.5">
                   {cat.skills.map((skill) => (
                     <div key={skill.name} className={`${cat.color}`}>
@@ -105,7 +104,7 @@ export function SkillsSection() {
                           {skill.name}
                         </span>
                         <span className="text-[10px] text-[#3f3f46] font-mono">
-                          {["", "Novice", "Basic", "Proficient", "Advanced", "Expert"][skill.level]}
+                          {t.levels[skill.level]}
                         </span>
                       </div>
                       <SkillBar level={skill.level} />
@@ -126,7 +125,7 @@ export function SkillsSection() {
           className="mt-8 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]"
         >
           <p className="text-xs text-[#52525b] font-medium uppercase tracking-widest mb-4">
-            Also working with
+            {t.also_working}
           </p>
           <div className="flex flex-wrap gap-2">
             {[

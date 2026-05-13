@@ -6,6 +6,7 @@ import { educationItems } from "@/data/education";
 import { Badge } from "@/components/ui/Badge";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { fadeUp, stagger } from "@/lib/animations";
+import type { Dictionary } from "@/lib/dictionaries";
 
 const iconMap = {
   degree: GraduationCap,
@@ -34,8 +35,9 @@ const colorMap = {
   },
 };
 
+export function EducationSection({ dict }: { dict: Dictionary }) {
+  const t = dict.education;
 
-export function EducationSection() {
   return (
     <section id="education" className="py-24 lg:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -47,17 +49,16 @@ export function EducationSection() {
           className="mb-16"
         >
           <motion.div variants={fadeUp} className="mb-4">
-            <SectionLabel>Education</SectionLabel>
+            <SectionLabel>{t.label}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#fafafa] mb-4"
           >
-            Formation & credentials
+            {t.heading}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[#71717a] text-lg max-w-xl">
-            Continuous learning combining formal education with hands-on
-            certifications and self-directed study.
+            {t.subtitle}
           </motion.p>
         </motion.div>
 
@@ -98,7 +99,7 @@ export function EducationSection() {
                           <Icon size={13} className={colors.icon} />
                         </div>
                         <span className="text-xs font-medium text-[#52525b] capitalize">
-                          {item.type}
+                          {t.types[item.type]}
                         </span>
                       </div>
 

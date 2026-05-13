@@ -18,11 +18,11 @@ export const skillCategories: SkillCategory[] = [
     color: "text-violet-400",
     bgColor: "bg-violet-500/10",
     skills: [
-      { name: "React", level: 5 },
-      { name: "Next.js", level: 5 },
-      { name: "TypeScript", level: 4 },
-      { name: "TailwindCSS", level: 5 },
-      { name: "Framer Motion", level: 4 },
+      { name: "React", level: 4 },
+      { name: "Next.js", level: 4 },
+      { name: "TypeScript", level: 3 },
+      { name: "TailwindCSS", level: 4 },
+      { name: "Framer Motion", level: 3 },
     ],
   },
   {
@@ -31,11 +31,11 @@ export const skillCategories: SkillCategory[] = [
     color: "text-blue-400",
     bgColor: "bg-blue-500/10",
     skills: [
-      { name: "Node.js", level: 5 },
-      { name: "Express", level: 5 },
-      { name: "Python", level: 4 },
-      { name: "Django", level: 4 },
-      { name: "REST APIs", level: 5 },
+      { name: "Node.js", level: 4 },
+      { name: "Express", level: 4 },
+      { name: "Python", level: 3 },
+      { name: "Django", level: 3 },
+      { name: "REST APIs", level: 4 },
     ],
   },
   {
@@ -44,10 +44,10 @@ export const skillCategories: SkillCategory[] = [
     color: "text-emerald-400",
     bgColor: "bg-emerald-500/10",
     skills: [
-      { name: "MongoDB", level: 5 },
-      { name: "PostgreSQL", level: 4 },
-      { name: "Mongoose ODM", level: 5 },
-      { name: "SQL", level: 4 },
+      { name: "MongoDB", level: 4 },
+      { name: "PostgreSQL", level: 3 },
+      { name: "Mongoose ODM", level: 3 },
+      { name: "SQL", level: 3 },
     ],
   },
   {
@@ -57,10 +57,10 @@ export const skillCategories: SkillCategory[] = [
     bgColor: "bg-amber-500/10",
     skills: [
       { name: "Docker", level: 3 },
-      { name: "Git & GitHub", level: 5 },
+      { name: "Git & GitHub", level: 4 },
       { name: "Vercel", level: 5 },
       { name: "Postman", level: 5 },
-      { name: "Linux", level: 3 },
+      { name: "Linux", level: 2 },
     ],
   },
   {

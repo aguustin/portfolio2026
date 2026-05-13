@@ -11,11 +11,13 @@ export interface Project {
   accentColor: string;
   tag: string;
   featured?: boolean;
+  image?: string;
 }
 
 export const projects: Project[] = [
   {
     id: "saas-events",
+    image: "/png/ipass.png",
     title: "GoTicket — SaaS de Gestión de Eventos",
     description:
       "Plataforma SaaS completa para gestión y venta de entradas a eventos con panel administrativo, roles y procesamiento de pagos.",
@@ -33,10 +35,11 @@ export const projects: Project[] = [
     accentColor: "text-violet-400",
     tag: "SaaS · Payments · MERN",
     featured: true,
-    githubUrl: "#",
+    githubUrl: "https://github.com/aguustin/newGomarket/tree/guardandoTransaccion",
   },
   {
     id: "task-manager",
+    image: "/png/tasks.png",
     title: "TaskFlow — Gestor Colaborativo de Tareas",
     description:
       "Plataforma colaborativa para gestión de proyectos y tareas con estados, comentarios y múltiples colaboradores.",
@@ -53,10 +56,11 @@ export const projects: Project[] = [
     gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
     accentColor: "text-emerald-400",
     tag: "Django · Next.js · Full Stack",
-    githubUrl: "#",
+    githubUrl: "https://github.com/aguustin/pythonTasks/tree/final",
   },
   {
     id: "security-platform",
+    image: "/png/ipass.png",
     title: "SecureGate — Plataforma de Seguridad Privada",
     description:
       "Sistema de seguridad para barrios privados con autenticación biométrica facial, app mobile y gestión en tiempo real.",
@@ -73,13 +77,14 @@ export const projects: Project[] = [
     gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
     accentColor: "text-blue-400",
     tag: "Mobile · AI · Security",
-    githubUrl: "#",
+    githubUrl: "https://github.com/aguustin/seguridad/tree/darkFront",
   },
   {
     id: "ai-leads",
-    title: "LeadAgent — Sistema IA de Generación de Leads",
+    image: "/png/ia_jobsearch.png",
+    title: "JobSearchAgent — Sistema IA para Aplicación Laboral",
     description:
-      "Agente de inteligencia artificial para automatización de prospección y generación de leads con procesamiento de datos avanzado.",
+      "Agente de inteligencia artificial para la búsqueda y gestión de ofertas laborales, capaz de asistir en postulaciones mediante la generación automática de respuestas, preparación para entrevistas, análisis de vacantes y creación de posibles preguntas y respuestas adaptadas a cada oportunidad.",
     longDescription:
       "Sistema de IA que automatiza el proceso de generación de leads mediante análisis de datos, clasificación inteligente y outreach automatizado para maximizar la conversión.",
     stack: ["Python", "AI/LLM", "Node.js", "REST API", "Automation", "Data Processing"],
@@ -93,7 +98,7 @@ export const projects: Project[] = [
     gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
     accentColor: "text-amber-400",
     tag: "AI · Automation · Python",
-    githubUrl: "#",
+    githubUrl: "https://github.com/aguustin/ia_jobsearch/tree/main",
   },
   {
     id: "saas-stores",
@@ -113,6 +118,6 @@ export const projects: Project[] = [
     gradient: "from-rose-500/10 via-pink-500/5 to-transparent",
     accentColor: "text-rose-400",
     tag: "SaaS · Commerce · MERN",
-    githubUrl: "#",
+    githubUrl: "https://github.com/aguustin/saas/tree/csvdownload",
   },
 ];

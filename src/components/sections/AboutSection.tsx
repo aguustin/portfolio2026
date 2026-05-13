@@ -4,35 +4,13 @@ import { motion } from "framer-motion";
 import { Code2, Layers, Zap, Bot } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { fadeUp, stagger } from "@/lib/animations";
+import type { Dictionary } from "@/lib/dictionaries";
 
-const specialties = [
-  {
-    icon: Layers,
-    title: "SaaS Builder",
-    description:
-      "Design and build complete SaaS products from architecture to deployment, covering backend, frontend, auth, and payments.",
-  },
-  {
-    icon: Code2,
-    title: "Full Stack Engineering",
-    description:
-      "End-to-end development across the entire stack: REST APIs, databases, state management, and modern UI.",
-  },
-  {
-    icon: Bot,
-    title: "AI-Assisted Development",
-    description:
-      "Integrate LLMs and AI agents into real products. Build automation workflows and intelligent features with modern AI tools.",
-  },
-  {
-    icon: Zap,
-    title: "Product Mindset",
-    description:
-      "Ship features that matter. I think from the user's perspective and build systems that solve real problems at scale.",
-  },
-];
+const specialtyIcons = [Layers, Code2, Bot, Zap];
 
-export function AboutSection() {
+export function AboutSection({ dict }: { dict: Dictionary }) {
+  const t = dict.about;
+
   return (
     <section id="about" className="py-24 lg:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -43,7 +21,7 @@ export function AboutSection() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-4">
-            <SectionLabel>About</SectionLabel>
+            <SectionLabel>{t.label}</SectionLabel>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mt-10">
@@ -53,30 +31,21 @@ export function AboutSection() {
                 variants={fadeUp}
                 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#fafafa]"
               >
-                Building products,
+                {t.heading1}
                 <br />
-                <span className="gradient-text-accent">not just code</span>
+                <span className="gradient-text-accent">{t.heading2}</span>
               </motion.h2>
 
               <motion.p variants={fadeUp} className="text-[#71717a] leading-relaxed">
-                I&apos;m Agustín, a Full Stack Product Engineer from Argentina.
-                I specialize in building complete web applications and SaaS
-                products — from the database design to the user interface —
-                with a focus on clean architecture, real-world scalability, and
-                great user experience.
+                {t.bio1}
               </motion.p>
 
               <motion.p variants={fadeUp} className="text-[#71717a] leading-relaxed">
-                I work across the entire product stack: REST APIs with Node.js
-                and Django, modern frontends with React and Next.js, mobile
-                apps with React Native, and increasingly, AI-powered features
-                using LLMs and automation agents.
+                {t.bio2}
               </motion.p>
 
               <motion.p variants={fadeUp} className="text-[#71717a] leading-relaxed">
-                I&apos;m currently pursuing a degree in Programming at UTN
-                while simultaneously building real-world products and expanding
-                my skills in AI tooling and modern DevOps practices.
+                {t.bio3}
               </motion.p>
 
               <motion.div
@@ -103,23 +72,26 @@ export function AboutSection() {
 
             {/* Right: specialty cards */}
             <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {specialties.map(({ icon: Icon, title, description }) => (
-                <motion.div
-                  key={title}
-                  variants={fadeUp}
-                  className="p-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 group"
-                >
-                  <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-4 group-hover:bg-indigo-500/15 transition-colors">
-                    <Icon size={16} className="text-indigo-400" />
-                  </div>
-                  <h3 className="text-sm font-semibold text-[#e4e4e7] mb-2">
-                    {title}
-                  </h3>
-                  <p className="text-xs text-[#52525b] leading-relaxed">
-                    {description}
-                  </p>
-                </motion.div>
-              ))}
+              {t.specialties.map(({ title, description }, i) => {
+                const Icon = specialtyIcons[i];
+                return (
+                  <motion.div
+                    key={title}
+                    variants={fadeUp}
+                    className="p-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 group"
+                  >
+                    <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-4 group-hover:bg-indigo-500/15 transition-colors">
+                      <Icon size={16} className="text-indigo-400" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-[#e4e4e7] mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-xs text-[#52525b] leading-relaxed">
+                      {description}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </motion.div>

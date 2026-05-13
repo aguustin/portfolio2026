@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": "Agustín Molé — Full Stack Product Engineer",
+    "description": "Full Stack Product Engineer especializado en SaaS, sistemas con IA y aplicaciones web modernas. Construyo productos end-to-end con React, Next.js, Node.js y más."
+  },
+  "nav": {
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "education": "Educación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "available": "Disponible para nuevas oportunidades",
+    "title1": "Full Stack",
+    "title2": "Product Engineer",
+    "subtitle": "Construyo productos SaaS completos y sistemas con IA de principio a fin — desde backends escalables y APIs limpias hasta interfaces frontend modernas y de alta calidad.",
+    "cta_projects": "Ver Proyectos",
+    "cta_cv": "Descargar CV"
+  },
+  "about": {
+    "label": "Sobre mí",
+    "heading1": "Construyendo productos,",
+    "heading2": "no solo código",
+    "bio1": "Soy Agustín, un Full Stack Product Engineer de Argentina. Me especializo en construir aplicaciones web completas y productos SaaS — desde el diseño de base de datos hasta la interfaz de usuario — con foco en arquitectura limpia, escalabilidad real y una gran experiencia de usuario.",
+    "bio2": "Trabajo en todo el stack del producto: REST APIs con Node.js y Django, frontends modernos con React y Next.js, apps mobile con React Native y, cada vez más, funcionalidades con IA usando LLMs y agentes de automatización.",
+    "bio3": "Actualmente estoy cursando la carrera de Programación en la UTN mientras construyo productos reales y expando mis habilidades en herramientas de IA y prácticas modernas de DevOps.",
+    "specialties": [
+      {
+        "title": "SaaS Builder",
+        "description": "Diseño y construyo productos SaaS completos desde la arquitectura hasta el deploy, cubriendo backend, frontend, auth y pagos."
+      },
+      {
+        "title": "Full Stack Engineering",
+        "description": "Desarrollo end-to-end en todo el stack: REST APIs, bases de datos, manejo de estado e interfaces modernas."
+      },
+      {
+        "title": "Desarrollo con IA",
+        "description": "Integro LLMs y agentes de IA en productos reales. Construyo flujos de automatización y funcionalidades inteligentes con herramientas modernas de IA."
+      },
+      {
+        "title": "Mentalidad de Producto",
+        "description": "Lanzo funcionalidades que importan. Pienso desde la perspectiva del usuario y construyo sistemas que resuelven problemas reales a escala."
+      }
+    ]
+  },
+  "projects": {
+    "label": "Proyectos",
+    "heading": "Productos que construí",
+    "subtitle": "Sistemas end-to-end construidos con estándares de calidad de producción — desde la arquitectura hasta el deploy.",
+    "view_github": "Ver en GitHub",
+    "items": [
+      {
+        "id": "saas-events",
+        "title": "GoTicket — SaaS de Gestión de Eventos",
+        "tag": "SaaS · Pagos · MERN",
+        "description": "Plataforma SaaS completa para gestión y venta de entradas a eventos con panel administrativo, roles y procesamiento de pagos.",
+        "features": [
+          "Venta de entradas con pasarela de pago",
+          "Gestión de trabajadores y roles",
+          "Panel administrativo completo",
+          "Dashboard de analytics",
+          "Autenticación JWT"
+        ]
+      },
+      {
+        "id": "task-manager",
+        "title": "TaskFlow — Gestor Colaborativo de Tareas",
+        "tag": "Django · Next.js · Full Stack",
+        "description": "Plataforma colaborativa para gestión de proyectos y tareas con estados, comentarios y múltiples colaboradores.",
+        "features": [
+          "Gestión de proyectos y tareas",
+          "Estados y prioridades configurables",
+          "Sistema de comentarios",
+          "Colaboradores y permisos",
+          "Dashboard de productividad"
+        ]
+      },
+      {
+        "id": "security-platform",
+        "title": "SecureGate — Plataforma de Seguridad Privada",
+        "tag": "Mobile · IA · Seguridad",
+        "description": "Sistema de seguridad para barrios privados con autenticación biométrica facial, app mobile y gestión en tiempo real.",
+        "features": [
+          "Reconocimiento facial en tiempo real",
+          "App mobile iOS y Android",
+          "Control de acceso biométrico",
+          "Gestión de residentes y visitas",
+          "Worker Threads para procesamiento paralelo"
+        ]
+      },
+      {
+        "id": "ai-leads",
+        "title": "JobSearchAgent — Sistema IA para Aplicación Laboral",
+        "tag": "IA · Automatización · Python",
+        "description": "Agente de inteligencia artificial para la búsqueda y gestión de ofertas laborales, capaz de asistir en postulaciones mediante la generación automática de respuestas, preparación para entrevistas, análisis de vacantes y creación de posibles preguntas y respuestas adaptadas a cada oportunidad.",
+        "features": [
+          "Automatización de prospección",
+          "Clasificación inteligente con IA",
+          "Procesamiento de datos a escala",
+          "Outreach automatizado",
+          "Dashboard de métricas"
+        ]
+      },
+      {
+        "id": "saas-stores",
+        "title": "StoreOS — SaaS de Gestión de Tiendas",
+        "tag": "SaaS · Comercio · MERN",
+        "description": "Sistema de gestión comercial para tiendas con dashboard, inventario, punto de venta y herramientas administrativas completas.",
+        "features": [
+          "Dashboard de métricas y ventas",
+          "Gestión de productos e inventario",
+          "Sistema de punto de venta (POS)",
+          "Reportes y analytics",
+          "Multi-usuario con roles"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "label": "Habilidades",
+    "heading": "Stack tecnológico y expertise",
+    "subtitle": "Un conjunto de habilidades moderno, orientado a producción, construido en desarrollo full stack, mobile y herramientas de IA.",
+    "also_working": "También trabajo con",
+    "levels": ["", "Principiante", "Básico", "Competente", "Avanzado", "Experto"]
+  },
+  "education": {
+    "label": "Educación",
+    "heading": "Formación y credenciales",
+    "subtitle": "Aprendizaje continuo que combina educación formal con certificaciones prácticas y estudio autodidacta.",
+    "types": {
+      "degree": "carrera",
+      "certificate": "certificado",
+      "course": "curso"
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "heading": "Trabajemos juntos",
+    "subtitle": "Abierto a nuevas oportunidades, proyectos freelance y colaboraciones interesantes. Enviame un mensaje y te respondo rápido.",
+    "available_text": "Disponible para contratar.",
+    "available_detail": "Actualmente estoy abierto a posiciones full-time, contratos freelance y proyectos side interesantes. Tiempo de respuesta: generalmente dentro de las 24 horas.",
+    "links": [
+      { "label": "Email", "description": "Ideal para consultas de trabajo" },
+      { "label": "GitHub", "description": "Mirá mi trabajo open source" },
+      { "label": "LinkedIn", "description": "Conectemos profesionalmente" }
+    ],
+    "form": {
+      "name": "Nombre",
+      "name_placeholder": "Tu nombre",
+      "email": "Email",
+      "email_placeholder": "tu@email.com",
+      "message": "Mensaje",
+      "message_placeholder": "Contame sobre tu proyecto u oportunidad...",
+      "send": "Enviar mensaje",
+      "sending": "Enviando...",
+      "sent": "Mensaje enviado ✓",
+      "response_time": "Generalmente respondo dentro de las 24 horas."
+    }
+  },
+  "footer": {
+    "role": "Full Stack Product Engineer"
+  }
+}
