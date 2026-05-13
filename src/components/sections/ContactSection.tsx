@@ -12,7 +12,7 @@ const contactIcons = [Mail, GithubIcon, LinkedinIcon];
 const contactHrefs = [
   "mailto:agustin.molee@gmail.com",
   "https://github.com/aguustin",
-  "https://linkedin.com/in/agustin-mole",
+  "https://www.linkedin.com/in/agust%C3%ADn-mol%C3%A9-barolo-b042141b1/",
 ];
 const contactValues = [
   "agustin.molee@gmail.com",
