@@ -2,13 +2,38 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
 import type { Dictionary } from "@/lib/dictionaries";
 
+function LangToggle({ currentLang }: { currentLang: string }) {
+  const pathname = usePathname();
+  const otherLang = currentLang === "en" ? "es" : "en";
+  const switchUrl = pathname.replace(`/${currentLang}`, `/${otherLang}`);
+
+  return (
+    <a
+      href={switchUrl}
+      className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/[0.14] transition-all duration-200 group"
+      aria-label={`Switch to ${otherLang.toUpperCase()}`}
+    >
+      <span className={cn("text-xs font-medium tabular-nums", currentLang === "en" ? "text-[#fafafa]" : "text-[#52525b]")}>
+        EN
+      </span>
+      <span className="text-[10px] text-white/[0.15]">/</span>
+      <span className={cn("text-xs font-medium tabular-nums", currentLang === "es" ? "text-[#fafafa]" : "text-[#52525b]")}>
+        ES
+      </span>
+    </a>
+  );
+}
+
 export function Navbar({ dict }: { dict: Dictionary }) {
   const t = dict.nav;
+  const pathname = usePathname();
+  const currentLang = pathname.split("/")[1] ?? "en";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -59,6 +84,7 @@ export function Navbar({ dict }: { dict: Dictionary }) {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
+            <LangToggle currentLang={currentLang} />
             <a
               href="https://github.com/aguustin"
               target="_blank"
@@ -68,7 +94,7 @@ export function Navbar({ dict }: { dict: Dictionary }) {
               <GithubIcon size={17} />
             </a>
             <a
-              href="https://linkedin.com/in/agustin-mole"
+              href="https://www.linkedin.com/in/agust%C3%ADn-mol%C3%A9-barolo-b042141b1/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-[#71717a] hover:text-[#fafafa] rounded-lg hover:bg-white/[0.05] transition-all duration-200"
@@ -111,25 +137,28 @@ export function Navbar({ dict }: { dict: Dictionary }) {
                 {link.label}
               </a>
             ))}
-            <div className="flex items-center gap-3 pt-3 mt-2 border-t border-white/[0.06]">
-              <a
-                href="https://github.com/aguustin"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"
-              >
-                <GithubIcon size={16} />
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/agustin-mole"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"
-              >
-                <LinkedinIcon size={16} />
-                LinkedIn
-              </a>
+            <div className="flex items-center justify-between pt-3 mt-2 border-t border-white/[0.06]">
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://github.com/aguustin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"
+                >
+                  <GithubIcon size={16} />
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/agust%C3%ADn-mol%C3%A9-barolo-b042141b1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-[#a1a1aa] hover:text-white rounded-lg hover:bg-white/[0.05] transition-all"
+                >
+                  <LinkedinIcon size={16} />
+                  LinkedIn
+                </a>
+              </div>
+              <LangToggle currentLang={currentLang} />
             </div>
           </nav>
         </motion.div>
