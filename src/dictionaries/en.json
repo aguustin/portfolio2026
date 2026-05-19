@@ -114,6 +114,19 @@
           "Reports and analytics",
           "Multi-user with roles"
         ]
+      },
+      {
+        "id": "obras_p",
+        "title": "Obras Particulares — Municipal Works Management Platform",
+        "tag": "NodeJS · React · MongoDB · AI Integration",
+        "description": "Municipal works manager — blueprints, permits, and technical review with AI for the municipality of Godoy Cruz.",
+        "features": [
+          "Permit management with SOAP municipal integration",
+          "PDF blueprint submission and versioning",
+          "Technical review with observations and comments",
+          "Automatic regulatory compliance analysis with AI",
+          "Role-based access control (Admin, Technician, Professional)"
+        ]
       }
     ]
   },

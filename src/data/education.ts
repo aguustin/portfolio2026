@@ -13,8 +13,8 @@ export const educationItems: EducationItem[] = [
     id: "tecnicatura",
     type: "degree",
     title: "Tecnicatura Superior en Programación",
-    institution: "Universidad Tecnológica Nacional (UTN)",
-    period: "2023 — En curso",
+    institution: "Universidad Del Aconcagua",
+    period: "2018 — 2021",
     description:
       "Formación técnica universitaria en programación, algoritmos, estructuras de datos, bases de datos y desarrollo de software.",
     tags: ["Algoritmos", "POO", "Bases de Datos", "Redes"],

@@ -150,8 +150,8 @@ function ProjectCard({
 
 export function ProjectsSection({ dict }: { dict: Dictionary }) {
   const t = dict.projects;
+  const dictById = Object.fromEntries(t.items.map((item) => [item.id, item]));
   const [featuredProject, ...restProjects] = projects;
-  const [featuredDict, ...restDicts] = t.items;
 
   return (
     <section id="projects" className="py-24 lg:py-32 px-6">
@@ -186,15 +186,15 @@ export function ProjectsSection({ dict }: { dict: Dictionary }) {
         >
           <ProjectCard
             project={featuredProject}
-            projectDict={featuredDict}
+            projectDict={dictById[featuredProject.id]}
             viewGithub={t.view_github}
             featured
           />
-          {restProjects.map((project, i) => (
+          {restProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              projectDict={restDicts[i]}
+              projectDict={dictById[project.id]}
               viewGithub={t.view_github}
             />
           ))}

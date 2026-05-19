@@ -37,6 +37,27 @@ export const projects: Project[] = [
     featured: true,
     githubUrl: "https://github.com/aguustin/newGomarket/tree/guardandoTransaccion",
   },
+   {
+    id: "ai-leads",
+    image: "/png/ia_jobsearch.png",
+    title: "JobSearchAgent — Sistema IA para Aplicación Laboral",
+    description:
+      "Agente de inteligencia artificial para la búsqueda y gestión de ofertas laborales, capaz de asistir en postulaciones mediante la generación automática de respuestas, preparación para entrevistas, análisis de vacantes y creación de posibles preguntas y respuestas adaptadas a cada oportunidad.",
+    longDescription:
+      "Sistema de IA que automatiza el proceso de generación de leads mediante análisis de datos, clasificación inteligente y outreach automatizado para maximizar la conversión.",
+    stack: ["Python", "AI/LLM", "Node.js", "REST API", "Automation", "Data Processing"],
+    features: [
+      "Automatización de prospección",
+      "Clasificación inteligente con IA",
+      "Procesamiento de datos a escala",
+      "Outreach automatizado",
+      "Dashboard de métricas",
+    ],
+    gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
+    accentColor: "text-amber-400",
+    tag: "AI · Automation · Python",
+    githubUrl: "https://github.com/aguustin/ia_jobsearch/tree/main",
+  },
   {
     id: "task-manager",
     image: "/png/tasks.png",
@@ -60,7 +81,7 @@ export const projects: Project[] = [
   },
   {
     id: "security-platform",
-    image: "/png/ipass.png",
+    image: "/png/mobile_security.png",
     title: "SecureGate — Plataforma de Seguridad Privada",
     description:
       "Sistema de seguridad para barrios privados con autenticación biométrica facial, app mobile y gestión en tiempo real.",
@@ -80,33 +101,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/aguustin/seguridad/tree/darkFront",
   },
   {
-    id: "ai-leads",
-    image: "/png/ia_jobsearch.png",
-    title: "JobSearchAgent — Sistema IA para Aplicación Laboral",
-    description:
-      "Agente de inteligencia artificial para la búsqueda y gestión de ofertas laborales, capaz de asistir en postulaciones mediante la generación automática de respuestas, preparación para entrevistas, análisis de vacantes y creación de posibles preguntas y respuestas adaptadas a cada oportunidad.",
-    longDescription:
-      "Sistema de IA que automatiza el proceso de generación de leads mediante análisis de datos, clasificación inteligente y outreach automatizado para maximizar la conversión.",
-    stack: ["Python", "AI/LLM", "Node.js", "REST API", "Automation", "Data Processing"],
-    features: [
-      "Automatización de prospección",
-      "Clasificación inteligente con IA",
-      "Procesamiento de datos a escala",
-      "Outreach automatizado",
-      "Dashboard de métricas",
-    ],
-    gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
-    accentColor: "text-amber-400",
-    tag: "AI · Automation · Python",
-    githubUrl: "https://github.com/aguustin/ia_jobsearch/tree/main",
-  },
-  {
     id: "saas-stores",
     title: "StoreOS — SaaS de Gestión de Tiendas",
     description:
-      "Sistema de gestión comercial para tiendas con dashboard, inventario, punto de venta y herramientas administrativas completas.",
+    "Sistema de gestión comercial para tiendas con dashboard, inventario, punto de venta y herramientas administrativas completas.",
     longDescription:
-      "Plataforma SaaS orientada a comercios que centraliza la gestión de inventario, ventas, clientes y reportes en un sistema moderno con experiencia POS integrada.",
+    "Plataforma SaaS orientada a comercios que centraliza la gestión de inventario, ventas, clientes y reportes en un sistema moderno con experiencia POS integrada.",
     stack: ["React", "Node.js", "MongoDB", "TailwindCSS", "TypeScript", "Mercado Pago"],
     features: [
       "Dashboard de métricas y ventas",
@@ -119,5 +119,26 @@ export const projects: Project[] = [
     accentColor: "text-rose-400",
     tag: "SaaS · Commerce · MERN",
     githubUrl: "https://github.com/aguustin/saas/tree/csvdownload",
+  },
+  {
+    id: "obras_p",
+    image: "/png/obras_p.png",
+    title: "Obras particulares — Plataforma de Gestión de obras",
+    description:
+    "Gestor de obras municipales — planos, expedientes y revisión técnica con IA.",
+    longDescription:
+      "Sistema de gestión de obras particulares para el municipio de Godoy Cruz. Permite a profesionales presentar expedientes con planos PDF, y a técnicos revisarlos y observarlos. Integra análisis automático de documentos vía IA (Ollama) para verificar cumplimiento normativo.",
+    stack: ["Node.js", "React", "Vite", "MongoDB", "MinIO", "Docker", "Ollama", "SOAP"],
+    features: [
+      "Gestión de expedientes con integración SOAP municipal",
+      "Presentación y versionado de planos en PDF",
+      "Revisión técnica con observaciones y comentarios",
+      "Análisis automático de cumplimiento normativo con IA",
+      "Control de acceso por roles (Admin, Técnico, Profesional)",
+    ],
+    gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
+    accentColor: "text-blue-400",
+    tag: "NodeJS · React · MongoDB · AI Integration",
+    githubUrl: "https://github.com/aguustin/obras_particulares/tree/soapIntegration",
   },
 ];

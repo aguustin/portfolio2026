@@ -22,9 +22,9 @@
     "label": "Sobre mí",
     "heading1": "Construyendo productos,",
     "heading2": "no solo código",
-    "bio1": "Soy Agustín, un Full Stack Product Engineer de Argentina. Me especializo en construir aplicaciones web completas y productos SaaS — desde el diseño de base de datos hasta la interfaz de usuario — con foco en arquitectura limpia, escalabilidad real y una gran experiencia de usuario.",
-    "bio2": "Trabajo en todo el stack del producto: REST APIs con Node.js y Django, frontends modernos con React y Next.js, apps mobile con React Native y, cada vez más, funcionalidades con IA usando LLMs y agentes de automatización.",
-    "bio3": "Actualmente estoy cursando la carrera de Programación en la UTN mientras construyo productos reales y expando mis habilidades en herramientas de IA y prácticas modernas de DevOps.",
+    "bio1": "Soy Agustín, Full Stack Engineer especializado en productos SaaS desde Argentina. Construyo aplicaciones web completas — desde el diseño de base de datos hasta la interfaz — con foco en arquitectura limpia y escalabilidad.",
+    "bio2": "Trabajo en todo el stack: APIs REST con Node.js y Django, frontends con React y Next.js, apps mobile con React Native, e integración de IA usando LLMs y agentes de automatización.",
+    "bio3": "Hoy estoy enfocado en llevar productos a producción con prácticas modernas de DevOps y herramientas de IA aplicadas a problemas reales.",
     "specialties": [
       {
         "title": "SaaS Builder",
@@ -113,6 +113,19 @@
           "Sistema de punto de venta (POS)",
           "Reportes y analytics",
           "Multi-usuario con roles"
+        ]
+      },
+      {
+        "id": "obras_p",
+        "title": "Obras Particulares — Plataforma de Gestión de Obras",
+        "tag": "NodeJS · React · MongoDB · Integración IA",
+        "description": "Gestor de obras municipales — planos, expedientes y revisión técnica con IA para el municipio de Godoy Cruz.",
+        "features": [
+          "Gestión de expedientes con integración SOAP municipal",
+          "Presentación y versionado de planos en PDF",
+          "Revisión técnica con observaciones y comentarios",
+          "Análisis automático de cumplimiento normativo con IA",
+          "Control de acceso por roles (Admin, Técnico, Profesional)"
         ]
       }
     ]
