@@ -116,6 +116,17 @@
         ]
       },
       {
+        "id": "iot-platform",
+        "title": "IoT Monitoring Platform — Plataforma de Monitoreo en Tiempo Real",
+        "tag": "IoT · Tiempo Real · TypeScript · Python",
+        "description": "Plataforma de monitoreo IoT end-to-end que ingesta telemetría de dispositivos físicos vía MQTT, detecta anomalías en tiempo real y las visualiza en un dashboard reactivo con WebSockets.",
+        "features": [
+          "Ingesta de telemetría en tiempo real por MQTT",
+          "Detección de anomalías por Z-score",
+          "Dashboard reactivo con historial de temperaturas y alertas"
+        ]
+      },
+      {
         "id": "obras_p",
         "title": "Obras Particulares — Plataforma de Gestión de Obras",
         "tag": "NodeJS · React · MongoDB · Integración IA",

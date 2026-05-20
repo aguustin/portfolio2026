@@ -33,7 +33,7 @@ const techStack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "Mongo
 export function HeroSection({ dict }: { dict: Dictionary }) {
   const t = dict.hero;
 
-  return (
+  return (    
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
       {/* Background gradients */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -101,7 +101,7 @@ export function HeroSection({ dict }: { dict: Dictionary }) {
               <ArrowDown size={15} />
             </a>
             <a
-              href="/cv.pdf"
+              href="/cv/CV_C.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.06] text-[#fafafa] text-sm font-medium rounded-xl border border-white/[0.08] hover:bg-white/[0.1] hover:border-white/[0.14] transition-all duration-200"
             >

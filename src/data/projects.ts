@@ -102,6 +102,7 @@ export const projects: Project[] = [
   },
   {
     id: "saas-stores",
+    image: "/png/saas.png",
     title: "StoreOS — SaaS de Gestión de Tiendas",
     description:
     "Sistema de gestión comercial para tiendas con dashboard, inventario, punto de venta y herramientas administrativas completas.",
@@ -119,6 +120,26 @@ export const projects: Project[] = [
     accentColor: "text-rose-400",
     tag: "SaaS · Commerce · MERN",
     githubUrl: "https://github.com/aguustin/saas/tree/csvdownload",
+  },
+  {
+    id: "iot-platform",
+    image: "/png/iot.png",
+    title: "IoT Monitoring Platform — Plataforma de Monitoreo en Tiempo Real",
+    description:
+      "Plataforma de monitoreo IoT end-to-end que ingesta telemetría de dispositivos físicos vía MQTT, detecta anomalías en tiempo real y las visualiza en un dashboard reactivo con WebSockets.",
+    longDescription:
+      "Sistema de monitoreo IoT que ingesta telemetría de múltiples dispositivos físicos a través de MQTT, analiza los datos con un servicio de detección de anomalías, los persiste en base de datos y los visualiza en un dashboard en tiempo real vía WebSockets.",
+    stack: ["TypeScript", "Node.js", "Express", "Socket.io", "Python", "FastAPI", "React", "PostgreSQL", "MQTT", "Docker"],
+    features: [
+      "Ingesta de telemetría en tiempo real por MQTT",
+      "Detección de anomalías por Z-score",
+      "Dashboard reactivo con historial de temperaturas y alertas",
+    ],
+    gradient: "from-cyan-500/10 via-teal-500/5 to-transparent",
+    accentColor: "text-cyan-400",
+    tag: "IoT · Real-time · TypeScript · Python",
+    featured: true,
+    githubUrl: "https://github.com/aguustin/iot-monitoring-platform/tree/cambios",
   },
   {
     id: "obras_p",
